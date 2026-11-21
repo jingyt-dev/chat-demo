@@ -126,20 +126,20 @@
 }
 
 .overlay {
-  animation: overlay-in 180ms ease both;
+  animation: overlay-in 260ms ease both;
 }
 
 .content {
-  animation: card-in 200ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation: card-in 260ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
 .overlay[data-state='closing'] {
-  animation: overlay-out 160ms ease both;
+  animation: overlay-out 260ms ease both;
   pointer-events: none;
 }
 
 .overlay[data-state='closing'] .content {
-  animation: card-out 160ms cubic-bezier(0.4, 0, 0.6, 1) both;
+  animation: card-out 260ms cubic-bezier(0.4, 0, 1, 1) both;
 }
 
 @media not all and (min-width: 768px) {

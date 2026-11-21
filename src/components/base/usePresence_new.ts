@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
-/** 与 CSS 中的退场动画时长保持一致 */
-const DEFAULT_DURATION = 200
+/** 略长于 CSS 中的退场动画时长 */
+const DEFAULT_DURATION = 280
 
 /**
  * 关闭时先保留挂载，等退场动画播完再卸载；返回的 closing 用于触发退场样式。
