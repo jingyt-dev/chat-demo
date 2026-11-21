@@ -76,7 +76,7 @@ export const createConfig = ({
   plugins: [
     // 经典 defer 脚本支持 file:// 页面的资源加载
     new rspack.HtmlRspackPlugin({
-      template: './src/index.html',
+      template: './src/index_new.html',
       scriptLoading: 'defer',
       meta: { 'application-version': version },
     }),
