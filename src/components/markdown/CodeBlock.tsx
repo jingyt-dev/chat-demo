@@ -1,4 +1,4 @@
-import { useTranslate } from '../../i18n/index.js'
+import { useTranslate } from '../../i18n/index_new.js'
 import { memo, useEffect, useMemo, useReducer, useState } from 'react'
 import Prism from 'prismjs'
 import {

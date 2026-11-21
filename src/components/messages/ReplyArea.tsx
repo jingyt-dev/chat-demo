@@ -1,4 +1,4 @@
-import { useTranslate } from '../../i18n/index.js'
+import { useTranslate } from '../../i18n/index_new.js'
 import clsx from 'clsx'
 import { memo, useEffect, useState, type ReactNode } from 'react'
 import {
@@ -14,7 +14,7 @@ import {
   IconSearchWarningOutline16,
   IconThinkOutline16,
 } from '../base/icons.js'
-import type { AssistantMessage } from '../../services/chat/types.js'
+import type { AssistantMessage } from '../../services/chat/types_new.js'
 import {
   getAreaTitle,
   isDeepSearchKind,
@@ -278,10 +278,7 @@ const ToolRow = ({
 
 const PageLink = ({ page, failedTip }: { page: PageItem; failedTip?: string }) => (
   <span
-    className={clsx(
-      styles.page,
-      page.status === 'failed' || !page.url ? styles.pageFailed : styles.pageDone
-    )}
+    className={clsx(styles.page, page.status === 'failed' ? styles.pageFailed : styles.pageDone)}
   >
     {page.status === 'failed' ? (
       <Tooltip content={failedTip}>

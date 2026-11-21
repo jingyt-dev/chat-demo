@@ -9,7 +9,7 @@ import {
 } from '../base/icons.js'
 import { setSearch, setThinking, useSettings } from '../../services/settings.js'
 import { useIsMobile } from '../../app/viewport.js'
-import { sendMessage, stopReply, useChatStore } from '../../services/chat/store.js'
+import { sendMessage, stopReply, useChatStore } from '../../services/chat/store_new.js'
 import {
   addDraftFiles,
   EMPTY_DRAFT,
@@ -31,7 +31,7 @@ import { DraftAttachments } from './DraftAttachments.js'
 import { useVoiceInput } from './useVoiceInput.js'
 import { VoiceButton } from './VoiceButton.js'
 import { Spectrum } from './Spectrum.js'
-import { useTranslate } from '../../i18n/index.js'
+import { useTranslate } from '../../i18n/index_new.js'
 import styles from './ChatInput.module.css'
 
 /** 输入框：自适应高度的文本框 + 文件 + 深度思考与智能搜索开关 + 语音输入 + 发送 / 停止 */

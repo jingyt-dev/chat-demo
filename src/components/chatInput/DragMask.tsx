@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { useTranslate } from '../../i18n/index.js'
+import { useTranslate } from '../../i18n/index_new.js'
 import { MAX_COUNT, MAX_SIZE_MB } from '../../services/attachments.js'
 import styles from './DragMask.module.css'
 

@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import type { AssistantMessage } from '../../services/chat/types.js'
+import type { AssistantMessage } from '../../services/chat/types_new.js'
 import { buildReplyView, type Source } from '../../services/chat/view.js'
 
 const sameSource = (a: Source, b: Source) =>

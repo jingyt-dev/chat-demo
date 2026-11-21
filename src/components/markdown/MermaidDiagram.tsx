@@ -1,4 +1,4 @@
-import { useTranslate } from '../../i18n/index.js'
+import { useTranslate } from '../../i18n/index_new.js'
 import { memo, useEffect, useRef, useState } from 'react'
 import { useTheme } from '../../app/theme.js'
 import { renderMermaid } from '../../services/markdown/mermaid.js'

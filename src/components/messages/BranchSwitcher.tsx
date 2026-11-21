@@ -1,11 +1,11 @@
-import { useTranslate } from '../../i18n/index.js'
+import { useTranslate } from '../../i18n/index_new.js'
 import { useRef } from 'react'
-import type { MessageVersions } from '../../services/chat/branches.js'
+import type { MessageVersions } from '../../services/chat/branches_new.js'
 import { IconChevronRightOutline14 } from '../base/icons.js'
 import { IconButton } from '../base/IconButton.js'
 import styles from './BranchSwitcher.module.css'
 
-export type { MessageVersions } from '../../services/chat/branches.js'
+export type { MessageVersions } from '../../services/chat/branches_new.js'
 export type SelectMessageVersion = (messageId: string, anchorTop: number) => void
 
 export const BranchSwitcher = ({
