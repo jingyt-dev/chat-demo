@@ -1,8 +1,8 @@
-import * as db from '../db.js'
-import type { Session } from '../types.js'
+import * as db from '../db_new.js'
+import type { Session } from '../types_new.js'
 import { EXPORT_FORMAT_VERSION, type Manifest, type SessionIndexEntry } from './format.js'
 import { INDEX_PATH, MANIFEST_PATH, imagePath, sessionPath } from './paths.js'
-import { toIndexEntry, toSessionFile } from './toArchive.js'
+import { toIndexEntry, toSessionFile } from './toArchive_new.js'
 import { writeArchive } from './zipWriter.js'
 
 const json = (value: unknown) => new Blob([JSON.stringify(value)], { type: 'application/json' })

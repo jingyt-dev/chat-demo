@@ -1,5 +1,4 @@
-import { translate } from '../../i18n/index.js'
-import { isWebUrl } from '../../utils/url.js'
+import { translate } from '../../i18n/index_new.js'
 import type {
   ServerToolKind,
   TextCitation,
@@ -7,7 +6,7 @@ import type {
   WebSearchResult,
   WebSearchToolResultBlock,
 } from '../api/types.js'
-import type { AssistantMessage, ThinkingPart } from './types.js'
+import type { AssistantMessage, ThinkingPart } from './types_new.js'
 
 /**
  * 由回复的内容块推导界面需要的结构：思考与工具步骤的时间线、带引用角标的正文、可引用的来源列表。
@@ -48,7 +47,7 @@ export type SearchStep = {
 
 export type PageItem = {
   id: string
-  url?: string
+  url: string
   title: string
   status: ToolStatus
 }
@@ -115,10 +114,7 @@ class SourceRegistry {
     title: string | null,
     publishedAt: string | null,
     metadata?: Pick<WebSearchResult, 'snippet' | 'site_icon' | 'site_name'>
-  ): Source | null {
-    if (!isWebUrl(url)) {
-      return null
-    }
+  ): Source {
     const siteName = metadata?.site_name?.trim() || getSiteName(url)
     const snippet = metadata?.snippet?.trim() || null
     const siteIcon = metadata?.site_icon?.trim() || null
@@ -165,10 +161,7 @@ const joinTextBlocks = (
     text += block.text
     const indexes = new Set<number>()
     for (const citation of block.citations ?? []) {
-      const source = registry.add(citation.url, citation.title, null)
-      if (source) {
-        indexes.add(source.index)
-      }
+      indexes.add(registry.add(citation.url, citation.title, null).index)
     }
     const body = indexes.size > 0 ? block.text.trimEnd() : block.text
     markdown += body
@@ -205,7 +198,7 @@ export const buildReplyView = (reply: AssistantMessage, streaming: boolean): Rep
       for (const item of result.content) {
         if (item.type === 'web_search_result') {
           const source = registry.add(item.url, item.title, item.page_age, item)
-          if (source && !searchResults.includes(source)) {
+          if (!searchResults.includes(source)) {
             searchResults.push(source)
           }
         }
@@ -280,7 +273,7 @@ export const buildReplyView = (reply: AssistantMessage, streaming: boolean): Rep
         result?.type === 'web_search_tool_result'
           ? result.content.flatMap((item) =>
               item.type === 'web_search_result'
-                ? (registry.add(item.url, item.title, item.page_age, item) ?? [])
+                ? [registry.add(item.url, item.title, item.page_age, item)]
                 : []
             )
           : []
@@ -312,10 +305,9 @@ export const buildReplyView = (reply: AssistantMessage, streaming: boolean): Rep
     }
 
     const fetched = result?.type === 'web_fetch_tool_result' ? result.content : null
-    const url = input.url || (fetched?.type === 'web_fetch_result' ? fetched.url : '')
     const page: PageItem = {
       id: block.id,
-      url: isWebUrl(url) ? url : undefined,
+      url: input.url || (fetched?.type === 'web_fetch_result' ? fetched.url : ''),
       title: (fetched?.type === 'web_fetch_result' ? fetched.content.title : null) || input.url,
       status,
     }

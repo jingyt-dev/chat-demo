@@ -1,9 +1,9 @@
-import * as db from '../db.js'
+import * as db from '../db_new.js'
 import { BackupError, fail } from './errors.js'
 import type { SessionIndexEntry } from './format.js'
 import { INDEX_PATH, MANIFEST_PATH, USER_PATH, parseSessionPath, sessionFilesDir } from './paths.js'
-import { checkManifest, readSessionFile, readSessionIndex } from './schema.js'
-import { toLocalSession } from './toLocal.js'
+import { checkManifest, readSessionFile, readSessionIndex } from './schema_new.js'
+import { toLocalSession } from './toLocal_new.js'
 import {
   ArchiveError,
   isZipFile,

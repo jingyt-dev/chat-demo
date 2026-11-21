@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import type { TranslationMessage } from '../../i18n/index.js'
+import type { TranslationMessage } from '../../i18n/index_new.js'
 import { ApiError } from '../api/client.js'
 import { classifyApiError } from '../api/errors.js'
 import { synthesize, TTS_SAMPLE_RATE } from '../api/speech.js'

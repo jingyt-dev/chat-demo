@@ -1,7 +1,7 @@
 import { formatDate } from '../../utils/format.js'
-import * as db from './db.js'
-import { replaceHistory, useChatStore } from './store.js'
-import type { Session } from './types.js'
+import * as db from './db_new.js'
+import { replaceHistory, useChatStore } from './store_new.js'
+import type { Session } from './types_new.js'
 
 export { BackupError } from './history/errors.js'
 

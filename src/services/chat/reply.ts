@@ -13,7 +13,7 @@ import type {
   ReplyBlock,
   ReplyStatus,
   UserMessage,
-} from './types.js'
+} from './types_new.js'
 
 /**
  * 文件按 Files API 的 file_id（附件的 serverId）引用：图片用 image 块，其余用 document 块。

@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useTranslate } from '../i18n/index.js'
+import { useTranslate } from '../i18n/index_new.js'
 import { useSettings } from '../services/settings.js'
 import { useIsMobile, useMobileViewport, usePreventPageScroll } from './viewport.js'
 import {
@@ -8,14 +8,14 @@ import {
   retrySaveSessions,
   selectSession,
   useChatStore,
-} from '../services/chat/store.js'
+} from '../services/chat/store_new.js'
 import { SearchPanel } from '../components/search/SearchPanel.js'
 import { closeSearchPanel } from '../components/search/searchPanelState.js'
 import { SessionView } from '../components/session/SessionView.js'
 import { MobileHeader } from '../components/session/MobileHeader.js'
 import { Welcome } from '../components/session/Welcome.js'
 import { ensureApiKey } from '../components/settings/settingsDialogState.js'
-import { SettingsDialog } from '../components/settings/SettingsDialog.js'
+import { SettingsDialog } from '../components/settings/SettingsDialog_new.js'
 import { Toast } from '../components/base/Toast.js'
 import { showToast } from '../components/base/toastState.js'
 import { onUploadNotice } from '../services/attachments.js'
@@ -23,8 +23,8 @@ import { Button } from '../components/base/Button.js'
 import { stopReadAloud } from '../services/speech/readAloud.js'
 import { CollapsedSider } from '../components/sider/CollapsedSider.js'
 import { closeMobileSider } from '../components/sider/mobileSiderState.js'
-import { MobileSider, Sider } from '../components/sider/Sider.js'
-import styles from './App.module.css'
+import { MobileSider, Sider } from '../components/sider/Sider_new.js'
+import styles from './App_new.module.css'
 
 export const App = () => {
   const t = useTranslate()
