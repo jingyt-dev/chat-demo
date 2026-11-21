@@ -39,6 +39,16 @@ jobs:
 
       - name: Add Android
         run: pnpm exec cap add android
+        
+      - name: Add assets tool
+        run: pnpm add -D @capacitor/assets
+
+      - name: Generate icons
+        run: |
+          pnpm exec capacitor-assets generate --android \
+            --iconBackgroundColor '#ffffff' \
+            --iconBackgroundColorDark '#1a1a1a' \
+            --splashBackgroundColor '#ffffff'
 
       - name: Build APK
         run: |
