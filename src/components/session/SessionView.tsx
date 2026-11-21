@@ -1,9 +1,9 @@
 import clsx from 'clsx'
 import { useIsMobile } from '../../app/viewport.js'
-import { useTranslate } from '../../i18n/index.js'
-import type { Session } from '../../services/chat/types.js'
+import { useTranslate } from '../../i18n/index_new.js'
+import type { Session } from '../../services/chat/types_new.js'
 import { ChatInput } from '../chatInput/ChatInput.js'
-import { MessageList } from '../messages/MessageList.js'
+import { MessageList } from '../messages/MessageList_new.js'
 import { MobileHeader } from './MobileHeader.js'
 import styles from './SessionView.module.css'
 

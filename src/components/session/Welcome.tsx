@@ -1,5 +1,5 @@
 import { useIsMobile } from '../../app/viewport.js'
-import { useTranslate } from '../../i18n/index.js'
+import { useTranslate } from '../../i18n/index_new.js'
 import { ChatInput } from '../chatInput/ChatInput.js'
 import { MobileHeader } from './MobileHeader.js'
 import styles from './Welcome.module.css'
